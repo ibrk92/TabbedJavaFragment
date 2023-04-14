@@ -30,7 +30,7 @@ public class SecondFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        // pageViewModelimizi initialize edelim;
         pageViewModel = new ViewModelProvider(requireActivity()).get(PageViewModel.class);
 
 
@@ -42,10 +42,11 @@ public class SecondFragment extends Fragment {
 
         TextView textView = view.findViewById(R.id.textView);
 
+        // textviewimizi pageview'den almamiz lazim cunku oraya kayit ettik hatirlarsan!!
         pageViewModel.getName().observe(requireActivity(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
-
+                // degistirilen texti textView'imize koysun
                 textView.setText(s);
 
             }
